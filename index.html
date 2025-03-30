@@ -1,0 +1,839 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <meta name="description"
+        content="This is a portfolio website for HARItenda Lincoln Mhedziso containing HARI's biography and social profiles such as LinkedIn and GitHub." />
+    <meta name="keywords" content="HARIHARAN, porfolio website, PassionOverPain" />
+    <meta name="author" content="HARIHARAN" />
+    <meta name="google-site-verification" content="d8Uve78HfX_Hn9B7z1HEcAUZTfJtPwbEPWyrcFXI_dI" />
+    <link rel="icon" type="image/png" href="/Images/Favicon.png" />
+    <!-- Notyf CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.css" />
+    <!-- Notyf JS -->
+    <script src="https://cdn.jsdelivr.net/npm/notyf@3/notyf.min.js"></script>
+    <!-- GSAP CDN link -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/ScrollTrigger.min.js"></script>
+    <!-- Video Js for status videos -->
+    <link href="https://unpkg.com/video.js/dist/video-js.css" rel="stylesheet" />
+    <script src="https://unpkg.com/video.js/dist/video.js"></script>
+
+    <title>HARIHARAN's ⚡ Data Insights </title>
+</head>
+
+<body>
+    <div id="preloader">
+        <div class="loader" id="Loading">
+            <div class="glitch"></div>
+        </div>
+    </div>
+    <!-------------------------------------------Header Start----------------------------------------------------------------------------------->
+    <header>
+        <div class="modalBackground" id="passionModal">
+            <div id="passionCard">
+                <div class="card__content">
+                    <img src="Images/Passion.webp" alt="Passion's image" class="card__propic" />
+                    <h2 class="card__title" id="cardTitle">Site Navigation</h2>
+                    <div id="cardIntro">
+                        <img src="" id="cardImage" />
+                        <p id="cardDescription"></p>
+                    </div>
+                    <div class="sitemap-grid" id="cardTable">
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/inspect.svg" alt="Help icon" />
+                            </div>
+                            <p>Hover over elements to see the Help Icon - click for more information</p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/navigate.svg" alt="Navigation icon" />
+                            </div>
+                            <p>Use the <strong>Navigation Menu</strong> in the top right to explore sections</p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/about.svg" alt="About section icon" />
+                            </div>
+                            <p>Learn about Hariharan's background and expertise in the <strong>About Me</strong> section
+                            </p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/computer.svg" alt="Projects icon" />
+                            </div>
+                            <p>View highlighted projects in the <strong>My Projects</strong> showcase</p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/animation.svg" alt="Animation toggle" />
+                            </div>
+                            <p>Toggle website animations through the <strong>Navigation Menu</strong></p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/ai.svg" alt="AI chatbot icon" />
+                            </div>
+                            <div class="chat-modes">
+                                <p>Chat with me via the bottom-right icon in three modes:</p>
+                                <ul>
+                                    <li><strong>Story Mode:</strong> Guided conversation flow</li>
+                                    <li><strong>Sandbox Mode:</strong> Open Q&A format</li>
+                                    <li><strong>Action Mode:</strong> Enhanced functionality</li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/checklist.svg" alt="Checklist icon" />
+                            </div>
+                            <p>Complete <strong>Checklist Quests</strong> in the Navigation Menu to learn more</p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/cookie.svg" alt="Cookie icon" />
+                            </div>
+                            <p>This site uses cookies for enhanced functionality and tracking</p>
+                        </div>
+
+                        <div class="sitemap-item">
+                            <div class="icon-wrapper">
+                                <img src="Images/Icons/privacy.svg" alt="Privacy icon" />
+                            </div>
+                            <p class="privacy-notice">
+                                <strong>Privacy Notice:</strong> Your data is protected under our
+                                <span onclick="showToS()" class="textBtn">Terms of Service</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flexBox">
+                        <button class="ui-btn" onclick="hidePopUp()" id="cardClose">
+                            <span>Return</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>.Passion Modal<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <div class="modal" id="ToS">
+            <article class="modal-container">
+                <header class="modal-container-header">
+                    <span class="modal-container-title">
+                        <svg aria-hidden="true" height="24" width="24" viewBox="0 0 24 24"
+                            xmlns="http://www.w3.org/2000/svg">
+                            <path d="M0 0h24v24H0z" fill="none"></path>
+                            <path
+                                d="M14 9V4H5v16h6.056c.328.417.724.785 1.18 1.085l1.39.915H3.993A.993.993 0 0 1 3 21.008V2.992C3 2.455 3.449 2 4.002 2h10.995L21 8v1h-7zm-2 2h9v5.949c0 .99-.501 1.916-1.336 2.465L16.5 21.498l-3.164-2.084A2.953 2.953 0 0 1 12 16.95V11zm2 5.949c0 .316.162.614.436.795l2.064 1.36 2.064-1.36a.954.954 0 0 0 .436-.795V13h-5v3.949z"
+                                fill="currentColor"></path>
+                        </svg>
+                        Terms of Services
+                    </span>
+                </header>
+                <section class="modal-container-body">
+                    <h2 style="margin-top: 0; margin-bottom: 20px">
+                        1. General Use of Software
+                    </h2>
+                    <p>
+                        All software created or acquired under the name
+                        <strong>HARIHARAN</strong> is provided as
+                        <strong>free-to-use open-source software</strong> unless explicitly stated otherwise. By using
+                        any such software, users agree to the following terms:
+                    </p>
+
+                    <h3>Open-Source Conditions</h3>
+                    All projects developed by HARIHARAN are open-source, and users are free to view, modify,
+                    and distribute the software, provided that:
+                    <ol style="margin-top: 10px">
+                        <li>
+                            Attribution to the original creator (
+                            <strong>HARIHARAN</strong> ) is included if project use case is for any form of
+                            distribution.
+                        </li>
+                        <li>
+                            In the event of external assets or assets not being owned by HARIHARAN: Attribution
+                            is reserved and given to the correct third-party owner. All projects which use third-party
+                            assets outline the attribution agreements in the
+                            <strong>ReadMe Attribution</strong> section.
+                        </li>
+                        <li>
+                            The software is not distributed for personal financial gain under the pretense that it was
+                            created solely from scratch by the distributor.
+                        </li>
+                    </ol>
+                    <h3>Prohibited Commercial Use</h3>
+                    Users may not sell or monetize the software without express written consent from the creator.
+
+                    <h2>2. Special Clause: "The Atlas Six"</h2>
+                    <p>
+                        <strong>"The Atlas Six"</strong> is a unique project developed by
+                        <strong>HARIHARAN</strong> . The following special conditions apply to this project:
+                    </p>
+                    <ol>
+                        <li>
+                            <strong>Free to Play</strong> : The game is free to play and use; however, it is not
+                            currently open-source.
+                        </li>
+                        <li>
+                            <strong>Character Submission</strong> : Users may submit their own characters to be included
+                            in the game, subject to the following conditions:
+                            <ul>
+                                <li>
+                                    <strong>Respectful Representation</strong> : Users must represent the game and their
+                                    characters respectfully, both in the game and in real life.
+                                </li>
+                                <li>
+                                    <strong>Character Ownership</strong> : While users retain ownership of their
+                                    submitted characters, they do not gain any ownership of the game itself.
+                                </li>
+                                <li>
+                                    <strong>Character Removal</strong> : Users may request the removal of their
+                                    characters at any time. Due to ongoing story updates, removal may take between
+                                    <strong>two weeks to one month</strong> to fully take effect.
+                                </li>
+                            </ul>
+                        </li>
+                    </ol>
+
+                    <h2>3. User Accounts and Conduct</h2>
+                    <p>
+                        To ensure a safe and respectful environment, users interacting across any domains or platforms
+                        owned by
+                        <strong>HARIHARAN</strong> must adhere to the following guidelines:
+                    </p>
+                    <h3>Prohibited Behavior</h3>
+                    <ul>
+                        <li>
+                            <strong>Violent Acts or Threats</strong> : Any form of violence, threats, or incitement to
+                            violence is strictly prohibited.
+                        </li>
+                        <li>
+                            <strong>Bullying or Harassment</strong> : Users may not bully, harass, or intimidate others.
+                        </li>
+                        <li>
+                            <strong>Discrimination</strong> : Discrimination based on race, gender, religion,
+                            nationality, sexual orientation, or any other personal characteristic is prohibited.
+                        </li>
+                        <li>
+                            <strong>Sexual Content</strong> : Posting or sharing sexual content, including nudity or
+                            sexually explicit material, is not allowed.
+                        </li>
+                        <li>
+                            <strong>Illegal Activities</strong> : Engaging in or promoting illegal activities is
+                            strictly prohibited.
+                        </li>
+                    </ul>
+
+                    <h3>Repercussions for Violations</h3>
+                    <ol>
+                        <li>
+                            <strong>Account Termination</strong> : Immediate termination of the user's account.
+                        </li>
+                        <li>
+                            <strong>Revocation of Software License</strong> : The user's license to use the software may
+                            be revoked.
+                        </li>
+                        <li>
+                            <strong>Permanent Ban</strong> : The user may be permanently banned from accessing the
+                            platform or software.
+                        </li>
+                    </ol>
+
+                    <h2>4. Legal Matters</h2>
+                    <ul>
+                        <li>
+                            <strong>Limitation of Liability</strong> : The creator,
+                            <strong>HARIHARAN</strong> , is not liable for any damages arising from the use of
+                            the software or services.
+                        </li>
+                        <li>
+                            <strong>No Warranty</strong> : All software and services are provided "as is" without any
+                            warranties, express or implied.
+                        </li>
+                        <li>
+                            <strong>Governing Law</strong> : These terms are governed by the laws of the jurisdiction in
+                            which the creator resides.
+                        </li>
+                        <li>
+                            <strong>Changes to Terms</strong> : The creator reserves the right to update or modify these
+                            Terms of Service at any time. Users will be notified of significant changes via appropriate
+                            channels.
+                        </li>
+                    </ul>
+
+                    <h2>5. Contact Information</h2>
+                    <p>
+                        For any questions or concerns regarding these Terms of Service, please contact:
+                    </p>
+                    <strong>HARIHARAN</strong>
+                    <ul>
+                        <li>
+                            Email:
+                            <a href="#ContactSection">Hhariharansivakumar64@gmail.com</a>
+                        </li>
+                    </ul>
+                    <br />
+                    <hr />
+                    <p>
+                        By using any software, services, or platforms provided by
+                        <strong>HARIHARAN</strong> , users acknowledge that they have read, understood, and
+                        agreed to these Terms of Service.
+                    </p>
+                </section>
+
+                <footer class="modal-container-footer">
+                    <div id="acceptanceBtns">
+                        <button class="button is-ghost" onclick="hideToS(false)">
+                            Decline
+                        </button>
+                        <button class="button is-primary" onclick="hideToS(true)">
+                            Accept
+                        </button>
+                    </div>
+                    <button class="button is-ghost" id="closeToS" onclick="hideToS(true)">
+                        Close
+                    </button>
+                </footer>
+            </article>
+        </div>
+        <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>Passion Notification<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <div class="messageCard" id="notification">
+            <div class="img"></div>
+            <div class="textBox">
+                <div class="textContent">
+                    <p class="h1">New Message</p>
+                    <span class="span" id="timeSent">0</span>
+                </div>
+                <p class="p" id="notificationText"></p>
+                <div></div>
+            </div>
+        </div>
+        <!-- >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>Terms of Service<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< -->
+        <section class="hero">
+            <h2 class="greeting">Hey there! <span class="wave">👋</span></h2>
+            <h1 class="myName">
+                I'm <span class="highlight-name">
+                    <span class="first-name">Hari</span>
+                    <span class="last-name">Haran</span>
+                </span>
+            </h1>
+            <div class="role-wrapper">
+                <h4 class="role">
+                    <span class="role-text">A Data Analyst</span>
+                    <span class="role-icon">📊</span>
+                </h4>
+            </div>
+            <div class="flexBox">
+                <button id="btn-message" class="button-message" onclick="contactMe()">
+                    <div class="content-avatar">
+                        <div class="status-user"></div>
+                        <div class="avatar">
+                            <svg class="user-img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                                <path
+                                    d="M12,12.5c-3.04,0-5.5,1.73-5.5,3.5s2.46,3.5,5.5,3.5,5.5-1.73,5.5-3.5-2.46-3.5-5.5-3.5Zm0-.5c1.66,0,3-1.34,3-3s-1.34-3-3-3-3,1.34-3,3,1.34,3,3,3Z">
+                                </path>
+                            </svg>
+                        </div>
+                    </div>
+                    <div class="notice-content">
+                        <div class="username">HARIHARAN</div>
+                        <div class="lable-message">Contact Me</div>
+                        <div class="user-id">@_har.ee_</div>
+                    </div>
+                </button>
+            </div>
+        </section>
+
+        <button class="nav-toggle" id="nav-toggle">📜</button>
+
+        <div id="nav-overlay"></div>
+
+        <!-- Navigation Panel -->
+        <nav id="nav-panel">
+            <!-- Profile Section -->
+            <div class="nav-profile">
+                <img src="Images/hari1.png" alt="Profile Picture" class="profile-pic" />
+                <div class="profile-info">
+                    <p id="user-name">HARIHARAN</p>
+
+                </div>
+                <button id="nav-close">&times;</button>
+            </div>
+
+            <!-- Navigation Items -->
+            <ul class="nav-links">
+                <a href="#Me">
+                    <li>
+                        <img src="Images/Icons/home.svg" alt="Home Icon" /> Home
+                    </li>
+                </a>
+                <a href="#AboutSection">
+                    <li>
+                        <img src="Images/Icons/about.svg" alt="About Icon" /> About
+                    </li>
+                </a>
+                <a href="#ProjectsSection">
+                    <li>
+                        <img src="Images/Icons/website.svg" alt="Projects Icon" /> Projects
+                    </li>
+                </a>
+                <a href="#SkillsSection">
+                    <li>
+                        <img src="Images/Icons/star.svg" alt="Skills Icon" /> Skills
+                    </li>
+                </a>
+                <a href="#SocialsSection">
+                    <li>
+                        <img src="Images/Icons/follow.svg" alt="Skills Icon" /> EXPERIENCE
+                    </li>
+                </a>
+                <li onclick="contactMe()">
+                    <img src="Images/Icons/contact.svg" alt="Download Icon" />
+                    <a>Contact Me</a>
+                </li>
+                <li id="Anime">
+                    <img src="Images/Icons/animation.svg" alt="Toggle Icon" />
+                    <a id="animeText">Disable Animations</a>
+                </li>
+                <li onclick="showToS()">
+                    <img src="Images/Icons/privacy.svg" alt="Terms Icon" />
+                    <a>Terms of Service</a>
+                </li>
+                <li onclick="downloadCV()">
+                    <img src="Images/Icons/cv.svg" alt="Download Icon" />
+                    <a>Download CV <span class="cv-badge">PDF</span></a>
+                </li>
+
+                <li onclick="supportMe()">
+                    <img src="Images/Icons/support.svg" alt="Download Icon" />
+                    <a>Support </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <br />
+        <!----------------------------------------About Section-------------------------------------------------------->
+        <section class="AboutMe" id="AboutSection">
+            <div class="row">
+                <div class="AboutC1">
+                    <img src="Images/hari3.png" alt="Illustration about me" class="illustration" />
+                </div>
+                <div class="AboutC2">
+                    <h3 class="subTitle bounce">ABOUT ME</h3>
+                    <div class="about-container">
+                        <p>
+                            Currently a second-year Bachelor of Technology in Artificial Intelligence and Data Science
+                            student with a strong passion for data analytics, machine learning, and AI. My journey into
+                            technology began with exploring AI-driven solutions, sparking a curiosity for solving
+                            real-world problems with data. I see data science as solving intricate puzzles—each
+                            challenge enhances my analytical thinking and technical expertise. I thrive on continuous
+                            learning, adapting to new technologies, and building innovative solutions that create
+                            meaningful impact.
+                        </p>
+                    </div>
+                    <div class="Extra">
+                        <button class="actionBtn ui-btn Activepoint" id="TechStack" onclick="show('Skills')">
+                            <span>Tech</span>
+                        </button>
+
+                        <button class="actionBtn ui-btn Viewpoint" id="Education" onclick="show('School')">
+                            <span>Education</span>
+                        </button>
+                    </div>
+                    <div class="View Activeview" id="Skills">
+                        <ul class="Programming">
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/Power_BI.png" alt="This is C#" />
+                                Power BI
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/excel.jpeg" alt="This is CSS" />
+                                Excel
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/py.jpeg" alt="This is Firebase" />
+                                Python
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/github.svg" alt="This is GitHub" />
+                                GitHub
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/mysql.svg" alt="This is MySQL" />
+                                MySQL
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/r.svg" alt="This is RStudio" />
+                                RStudio
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/ai.svg" alt="This is Unity" />
+                                Ai learning
+                            </li>
+                            <li>
+                                <img class="Icon language animate" src="Images/Icons/ui.png"
+                                    alt="This is Visual Sstudio" /> RPA(UI Path)
+                            </li>
+
+                            <br />
+                        </ul>
+                    </div>
+                    <div class="View" id="School">
+                        <ul>
+                            <li>
+                                <span style="color: #0f0;">
+                                    Achariya College of Engineering and Technology
+                                    <span
+                                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                                        [2024 - 2027]
+                                    </span>
+                                </span>
+                                <ul>
+                                    <li><strong>Bachelor of Technology in Artificial Intelligence and Data
+                                            Science</strong></li>
+                                    <li><strong>Second-Year</strong></li>
+                                    <li>8.5 CGPA</li>
+                                </ul>
+                            </li>
+
+                            <li>
+                                <span style="color: #0f0;">
+                                    Wiseman Hr. Sec. School
+                                    <span
+                                        style="font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;">
+                                        [Higher Secondary Completion - 2023]
+                                    </span>
+                                </span>
+                            <li><strong>TOP 10 IN SCHOOL</strong></li>
+                            <li><strong>85 Percentile</strong></li>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!------------------------------------------------Projects---------------------------------------------------------------------------------------->
+        <section class="Projects" id="ProjectsSection">
+            <div class="flexBox">
+                <h2 class="section-title subTitle bounce" onclick="showNotification(`By clicking the ...`,3)">
+                    MY PROJECTS
+                </h2>
+            </div>
+            <div class="project-item" id="TheAtlasSix">
+                <div class="project-icon">
+                    <img src="Images/Icons/theAtlasSix.svg" alt="The Atlas Six Icon" />
+                </div>
+                <div class="project-details">
+                    <h2>Hand Gesture Recognition</h2>
+                    <p>
+                        Hand Gesture Recognition is a computer vision technique that detects and interprets hand
+                        movements using a camera. It involves capturing real-time video, detecting hands, identifying
+                        key landmarks, and classifying gestures to perform specific actions. Technologies like OpenCV
+                        and MediaPipe enable efficient hand tracking, while deep learning models can enhance recognition
+                        accuracy. This technology is widely used in human-computer interaction, gaming, robotics, and
+                        sign language recognition.
+                    </p>
+                    <p>
+                        <strong>Platforms:</strong> Desktop and Laptop
+                    </p>
+
+
+                    <div class="project-tags">
+                        <span class="tag">AI</span>
+                        <span class="tag">Machine Learning</span>
+                        <span class="tag">Python</span>
+                        <span class="tag">Cryptography</span>
+                        <span class="tag">Web Development</span>
+                    </div>
+                </div>
+                <div class="project-preview">
+                    <img src="Images/Previews/hand.avif" alt="The Atlas Six Preview" />
+                </div>
+            </div>
+
+            <div class="project-item" id="Passion">
+                <div class="project-icon">
+                    <img src="Images/Icons/ai.svg" alt="Passion Icon" />
+                </div>
+                <div class="project-details">
+                    <h2>Led Blinking Project</h2>
+                    <p>
+                        The LED Blinking project is a basic yet fundamental electronics project that demonstrates how to
+                        control an LED using a microcontroller like Arduino, Raspberry Pi, or ESP8266. It involves
+                        connecting an LED to a digital output pin and programming it to turn ON and OFF at regular
+                        intervals. This project helps beginners understand GPIO (General-Purpose Input/Output) control,
+                        coding logic, and timing functions. It serves as a foundation for more advanced embedded systems
+                        and IoT applications.
+                    </p>
+                    <p>
+                        <strong>Platform:</strong> Hardware
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Electronics</span>
+                        <span class="tag">Embedded Systems</span>
+                        <span class="tag">Arduino</span>
+                        <span class="tag">Microcontroller</span>
+                        <span class="tag">IoT</span>
+                        <span class="tag">Circuit Design</span>
+                        <span class="tag">Basic Electronics</span>
+                    </div>
+                </div>
+                <div class="project-preview">
+                    <img src="Images/Previews/arduino-button-led-wiring-diagram.jpg" alt="Passion Preview" />
+                </div>
+            </div>
+
+            <div class="project-item" id="CreateIT">
+                <div class="project-icon">
+                    <img src="Images/Icons/createIT.svg" alt="CreateIT Icon" />
+                </div>
+                <div class="project-details">
+                    <h2>CreateIT</h2>
+                    <p>
+                        A mobile application prototype that incorporates user's on hands ingredients to consume APIs.
+                        CreateIT recommendS meals based on available ingredients, offering a practical and delicious
+                        solution to everyday meal planning.
+                    </p>
+                    <p>
+                        <strong>Platforms:</strong> Desktop and Laptop
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">C#</span>
+                        <span class="tag">CSV</span>
+                        <span class="tag">Food App</span>
+                        <span class="tag">Local-Database</span>
+                    </div>
+                </div>
+                <div class="project-preview">
+                    <img src="Images/Previews/CreateIT.webp" alt="CreateIT Preview" />
+                </div>
+            </div>
+
+            <div class="project-item" id="TaskApp">
+                <div class="project-icon">
+                    <img src="Images/Icons/checklist.svg" alt="TaskApp Icon" />
+                </div>
+                <div class="project-details">
+                    <h2>Project Management App</h2>
+                    <p>
+                        This project management app utilizes ASP.NET Core Web APIs with Entity Framework and SQL Server
+                        for data storage. It offers comprehensive task tracking and employee management features,
+                        ensuring secure and efficient project workflows. The application
+                        supports role-based authentication and authorization to perform actions.
+                    </p>
+                    <p>
+                        <strong>Platforms:</strong> Desktop and Laptop
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">ASP.NET</span>
+                        <span class="tag">C#</span>
+                        <span class="tag">React</span>
+                        <span class="tag">SQL Database</span>
+                        <span class="tag">Task App</span>
+                    </div>
+                </div>
+                <div class="project-preview">
+                    <img src="Images/Previews/ProjectApp.png" alt="TaskApp Preview" />
+                </div>
+            </div>
+
+            <div class="project-item" id="TemplatePortfolio">
+                <div class="project-icon">
+                    <img src="Images/Icons/portfolio.svg" alt="Template Portfolio Icon" />
+                </div>
+                <div class="project-details">
+                    <h2>Template Portfolio</h2>
+                    <p>
+                        An older version on my portfolio website built from the Knight Bootstrap template.
+                    </p>
+                    <p>
+                        <strong>Platforms:</strong> Desktop, Laptop and Mobile
+                    </p>
+                    <div class="project-tags">
+                        <span class="tag">Bootstrap</span>
+                        <span class="tag">CSS</span>
+                        <span class="tag">Email js</span>
+                        <span class="tag">HTML</span>
+                        <span class="tag">JavaScript</span>
+                        <span class="tag">Portfolio</span>
+                        <span class="tag">Website</span>
+                    </div>
+                </div>
+                <div class="project-preview">
+                    <a href="https://passion-over-pain.github.io/Portfolio-Redesigned/" target="_blank">
+                        <img src="Images/Previews/Old-Portfolio.webp" alt="Template Portfolio Preview" />
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-------------------------------------------Skills--------------------------------------------------------------------------------------------->
+        <section class="Skills" id="SkillsSection">
+            <div class="flexBox">
+                <h2 class="section-title subTitle bounce">MY EXPERIENCE</h2>
+            </div>
+            <div class="skills-container">
+                <div class="skill-card">
+                    <img src="Images/Illustrations/data.jpg" alt="Chatbot Building" class="illustration" />
+                    <h3>Data Analyst</h3>
+                    <p>
+                    <H4>RD INFRO Technology</H4>
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img src="Images/Illustrations/bus.jpg" alt="Desktop Development" class="illustration" />
+                    <h3>Bussiness Analyst</h3>
+                    <p>
+                    <H4>Ybi Foundations</H4>
+                    </p>
+                </div>
+                <div class="skill-card">
+                    <img src="Images/Illustrations/power.jpg" alt="Web Development" class="illustration" />
+                    <h3>Power BI</h3>
+                    <p>
+                    <H4>Cognify Technologies</H4>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!------------------------------------------------My Socials---------------------------------------------------------------------------------------->
+        <section class="Socials" id="SocialsSection">
+            <div class="flexBox">
+                <h3 class="subTitle bounce section-title">My Socials</h3>
+            </div>
+            <div class="stories-container">
+                <img src="Images/Previews/Professional-cover.webp" alt="Professional Updates" class="story-icon"
+                    data-story="professional" />
+                <img src="Images/Previews/Casual-cover.webp" alt="Casual Updates" class="story-icon"
+                    data-story="casual" />
+            </div>
+
+            <div class="story-viewer hidden">
+                <div class="story-progress-bar"></div>
+                <div class="story-content"></div>
+                <button class="close-story">×</button>
+            </div>
+
+            <ul class="socialIconsCon">
+                <li class="social-Icon">
+                    <a href="mailto:hariharansivakumuar64@gmail.com" target="_blank">
+                        <i class="fa-solid fa-envelope-circle-check"></i>
+                        <span>Email</span>
+                    </a>
+                </li>
+                <li class="social-Icon">
+                    <a onclick="openGitHub()">
+                        <i class="fa-brands fa-github"></i>
+                        <span>GitHub</span>
+                    </a>
+                </li>
+                <li class="social-Icon">
+                    <a href="https://www.linkedin.com/in/hari-haran01" target="_blank">
+                        <i class="fa-brands fa-linkedin"></i>
+                        <span>LinkedIn</span>
+                    </a>
+                </li>
+            </ul>
+        </section>
+    </main>
+    <footer class="footer" id="FooterSection">
+        <div class="footer-container">
+            <div class="footer-links">
+                <div class="footer-column">
+                    <h4>Sections</h4>
+                    <ul>
+                        <li><a href="#AboutSection">About Me</a></li>
+                        <li><a href="#ProjectsSection">My Projects</a></li>
+                        <li><a href="#SkillsSection">My Experience</a></li>
+                        <li><a href="#SocialsSection">My Socials</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Highlighted Skills</h4>
+                    <ul>
+                        <li>Power BI</li>
+                        <li>RPA in UI path</li>
+                        <li>Data Analyst</li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h4>Selected Projects</h4>
+                    <ul class="footer-projects">
+                        <li>
+                            <a href="#TheAtlasSix">
+                                <img src="Images/Icons/theAtlasSix.svg" alt="The Atlas Six Icon" />
+                            </a>
+                            <p class="project-name">The Atlas Six</p>
+                        </li>
+                        <li>
+                            <a href="#Passion">
+                                <img src="Images/Icons/her.svg" alt="Passion footer project icon" />
+                            </a>
+                            <p class="project-name">Passion</p>
+                        </li>
+                        <li>
+                            <a href="#CreateIT">
+                                <img src="Images/Icons/createIT.svg" alt="CreateIT footer project Icon" />
+                            </a>
+                            <p class="project-name">CreateIT</p>
+                        </li>
+                        <li>
+                            <a href="#TaskApp">
+                                <img src="Images/Icons/checklist.svg" alt="Project Management App Icon" />
+                            </a>
+                            <p class="project-name">Task App</p>
+                        </li>
+                        <li>
+                            <a href="#TemplatePortfolio">
+                                <img src="Images/Icons/portfolio.svg" alt="Template Portfolio Icon" />
+                            </a>
+                            <p class="project-name">Old Portfolio</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <a class="textBtn" onclick="contactMe()">Contact Me</a>
+                <p>&copy; 2025 HARIHARAN. All Rights Reserved.</p>
+                <a href="#" class="back-to-top">Back to Top</a>
+
+            </div>
+            <audio id="myMusic" src="Audio/Music/Shogun's Shadow Trap.mp3"></audio>
+        </div>
+        </div>
+    </footer>
+
+    <script type="text/javascript" src="p5.min.js"></script>
+    <script type="text/javascript" src="p5.sound.min.js"></script>
+    <script>
+        window.p5 = p5; // Ensure p5 is globally available
+    </script>
+    <script type="text/javascript" src="function.js" defer></script>
+
+
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script> -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+        integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanilla-tilt/1.8.1/vanilla-tilt.min.js"
+        integrity="sha512-wC/cunGGDjXSl9OHUH0RuqSyW4YNLlsPwhcLxwWW1CR4OeC2E1xpcdZz2DeQkEmums41laI+eGMw95IJ15SS3g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+</body>
+
+</html>
